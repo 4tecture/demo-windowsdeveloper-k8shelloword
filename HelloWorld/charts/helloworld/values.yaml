@@ -1,0 +1,51 @@
+# Default values for helloworld.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+fullnameOverride: helloworld
+replicaCount: 1
+image:
+  repository: 4tecture/hello-world
+  tag: v2.1
+  pullPolicy: Always
+imagePullSecrets: []
+  
+service:
+  type: ClusterIP
+  port: 80
+
+probes:
+  enabled: false
+
+ingress:
+  enabled: false
+  annotations:
+    #kubernetes.io/tls-acme: "true"
+  path: /
+  # hosts:
+  #   - chart-example.local
+  tls: []
+    # - secretName: chart-example-tls
+    #   hosts:
+    #     - chart-example.local
+
+hpa:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  averageCpuUtilization: 50
+
+secrets: {}
+  mysecret:
+    mypassword: password
+
+envvariables:
+  Message: VALUE_TO_OVERRIDE
+  DeploymentEnvironment: VALUE_TO_OVERRIDE
+
+resources: {}
+  
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

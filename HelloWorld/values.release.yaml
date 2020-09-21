@@ -1,0 +1,19 @@
+replicaCount: __ReplicaCount__
+image:
+  repository: __ImageName__
+  tag: __Build.BuildNumber__
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/tls-acme: "true"
+  hosts:
+    - __IngressHostName__
+  tls:
+    - secretName: __TlsSecretName__
+      hosts:
+        - __IngressHostName__
+
+envvariables:
+  Message: __Message__
+  DeploymentEnvironment: __DeploymentEnvironment__

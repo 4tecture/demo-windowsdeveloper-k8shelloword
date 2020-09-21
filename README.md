@@ -1,5 +1,6 @@
 # Docker Hello World
 This solution and docker container is intended to be used as an introcutionary sample to docker. You learn how to build a docker container and run it. Environment variables provide the ability to change the text which is displayed on the home page.
+This repository is also used for the article "ASP.NET Core Microservices in Kubernetes (AKS) betreiben" in the October 2020 issue of Windows Developer. This article describes how to set up an application to deploy it to Kubernetes.
 
 # Building the container
 - Build the image based on dockerfile

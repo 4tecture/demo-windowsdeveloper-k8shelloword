@@ -34,7 +34,7 @@ hpa:
   maxReplicas: 10
   averageCpuUtilization: 50
 
-secrets: {}
+secrets: 
   mysecret:
     mypassword: password
 
